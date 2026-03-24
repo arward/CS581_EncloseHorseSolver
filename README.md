@@ -1,2 +1,2 @@
 # horse-pen
-This is my attempt to solve the popular Enclose Horse game.
+This is our attempt to solve the popular Enclose Horse game using two methods.
