@@ -1,0 +1,6 @@
+D:/sloppyhorse/build/CMakeFiles/enclosed.dir
+D:/sloppyhorse/build/CMakeFiles/edit_cache.dir
+D:/sloppyhorse/build/CMakeFiles/rebuild_cache.dir
+D:/sloppyhorse/build/CMakeFiles/list_install_components.dir
+D:/sloppyhorse/build/CMakeFiles/install.dir
+D:/sloppyhorse/build/CMakeFiles/install/local.dir
