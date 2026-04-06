@@ -252,21 +252,22 @@ void printUsage() {
 }
 
 int main(int argc, char* argv[]) {
-    // Parse args
-    bool        quiet     = false;
-    bool        batch     = false;
-    string      csvPath;
-    string      date;
+    bool   quiet   = false;
+    bool   batch   = false;
+    string csvPath;
+    string date;
 
     for (int i = 1; i < argc; i++) {
         string a = argv[i];
-        if (a == "-q")       quiet = true;
-        else if (a == "--batch") {
+        if (a == "-q" || a == "/q") {
+            quiet = true;
+        } else if (a == "--batch" || a == "-batch" || a == "/batch") {
             batch = true;
             if (i + 1 < argc) csvPath = argv[++i];
-        } else {
-            date = a;
+        } else if (a.size() == 10 && a[4] == '-' && a[7] == '-') {
+            date = a;  // YYYY-MM-DD
         }
+        // unknown args silently ignored
     }
 
     if (batch) {
@@ -350,8 +351,8 @@ int main(int argc, char* argv[]) {
             return 1;
         }
     } else {
-        cout << "Fetching puzzle for " << date << "...\n";
         try {
+            cout << "Fetching puzzle for " << date << "...\n";
             solveDate(date, false);
         } catch (exception& e) {
             cerr << "ERROR: " << e.what() << "\n";
